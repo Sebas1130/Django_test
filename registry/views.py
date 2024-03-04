@@ -53,7 +53,7 @@ def signin(request):
             return render(request, 'signin.html', {"form": AuthenticationForm, "error": "Username or password is incorrect."})
 
         login(request, user)
-        return redirect('tasks')
+        return redirect('home')
     
 
 # @api_view(['POST'])
