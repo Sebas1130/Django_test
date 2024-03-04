@@ -1,7 +1,5 @@
 from rest_framework import routers
 from .api import EmpresaViewSet, ProjectsViewSet, ClienteViewSet, OrdenViewSet, OrdenProductoViewSet, CategoriaViewSet
-from . import views
-from django.urls import path, include
 
 router = routers.DefaultRouter()
 

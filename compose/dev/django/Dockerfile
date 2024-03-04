@@ -3,7 +3,7 @@ FROM python:3.8.15-alpine
 LABEL maintainer="sebaspenagos11@gmail.com"
 
 RUN apk update \
-    && apk add --no-cache build-base libressl-dev postgresql-dev \
+    && apk add build-base postgresql-dev libffi-dev openssl-dev \
     && pip install -U pip \
     && mkdir -p /app/ \
     && mkdir -p /home/data/www
@@ -11,11 +11,10 @@ RUN apk update \
 
 COPY ../../../../requirements.txt /app/
 
-RUN  pip install -r /app/requirements.txt
-    #set -ex \
-    #&& apk add --no-cache --virtual .build-deps build-base \
-    #&& pip install psycopg2 \ 
-    #&& apk del .build-deps
+RUN set -ex \
+    && apk add build-base \
+    && pip install -r /app/requirements.txt 
+#    && apk del .build-deps
 
 COPY ./compose/dev/django/ssh/config /root/.ssh/config
 

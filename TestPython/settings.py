@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'inventarioPDF',
     'registry',
     'project',
     'rest_framework',
@@ -94,6 +95,11 @@ DATABASES = {
         'PASSWORD': 'admin123',
         'HOST': 'localhost',
         'PORT': '5432',
+        # 'NAME': os.environ['POSTGRES_DB'],
+        # 'USER': os.environ['POSTGRES_USER'],
+        # 'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        # 'HOST': os.environ['POSTGRES_HOST'],
+        # 'PORT': os.environ['POSTGRES_PORT'],
     }
 }
 
@@ -133,6 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = '/home/data/www/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
