@@ -1,3 +1,4 @@
+import os
 from io import BytesIO
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -10,17 +11,16 @@ from botocore.exceptions import NoCredentialsError
 from project.models import Producto
 
 # Importaciones para cargar variables de entorno
-from dotenv import load_dotenv
-from os import getenv
+#from dotenv import load_dotenv
+#from os import getenv
 
 
 # Configurar cliente de Amazon SNS
-load_dotenv()
+#load_dotenv()
 sns_client = boto3.client("sns",
-                          aws_access_key_id=getenv("AWS_ACCESS_KEY_ID"),
-                          aws_secret_access_key=getenv(
-                              "AWS_SECRET_ACCESS_KEY"),
-                          region_name=getenv("AWS_REGION"))
+                        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+                        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+                        region_name=os.environ.get("AWS_REGION"))
 
 
 # Vista de inventario

@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t4k-%z!w)g0=7gp^yk0wu-b)pyr(q&dp&)cyfogncp%7ayj)hb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = int(os.environ['DEBUG'])
-DEBUG=1
+DEBUG = int(os.environ['DEBUG'])
+#DEBUG=1
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'psycopg2',
+    'dotenv',
 ]
 
 MIDDLEWARE = [
@@ -90,16 +91,16 @@ WSGI_APPLICATION = 'TestPython.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test2',
-        'USER': 'admin',
-        'PASSWORD': 'admin123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        # 'NAME': os.environ['POSTGRES_DB'],
-        # 'USER': os.environ['POSTGRES_USER'],
-        # 'PASSWORD': os.environ['POSTGRES_PASSWORD'],
-        # 'HOST': os.environ['POSTGRES_HOST'],
-        # 'PORT': os.environ['POSTGRES_PORT'],
+        # 'NAME': 'test2',
+        # 'USER': 'admin',
+        # 'PASSWORD': 'admin123',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST'],
+        'PORT': os.environ['POSTGRES_PORT'],
     }
 }
 

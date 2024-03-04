@@ -17,6 +17,7 @@ services:
     env_file:
       - ./.environments/dev/django/.django
       - ./.environments/dev/postgres/.postgres
+      - ./.environments/aws/config
     ports:
       - 8000:8000
 
