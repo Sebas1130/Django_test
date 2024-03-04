@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -23,7 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t4k-%z!w)g0=7gp^yk0wu-b)pyr(q&dp&)cyfogncp%7ayj)hb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ['DEBUG'])
+
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    # Set a list of your doamin in production
+    ALLOWED_HOSTS = ['*']
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +47,7 @@ INSTALLED_APPS = [
     'registry',
     'project',
     'rest_framework',
+    'rest_framework.authtoken',
     'psycopg2',
 ]
 
