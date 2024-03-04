@@ -10,7 +10,7 @@ Para obtener este repositorio, ejecute el siguiente comando dentro de su termina
 ```bash
 git clone https://github.com/Sebas1130/Django_test.git
 ```
-Necesitará tener correr el proyecto se necesita levantar los contenedores
+Para correr la aplicacion se tienen que levantar los contenedores
 ```bash
 export COMPOSE_FILE=local.yml; docker-compose build
 ```
