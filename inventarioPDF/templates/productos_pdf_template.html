@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos PDF</title>
+    <style>
+        /* Estilos CSS aquí (opcional) */
+    </style>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Características</th>
+                <th>Precio USD</th>
+                <th>Precio EUR</th>
+                <th>Precio GBP</th>
+                <th>Empresa</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.codigo }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.caracteristicas }}</td>
+                <td>{{ producto.precio_usd }}</td>
+                <td>{{ producto.precio_eur }}</td>
+                <td>{{ producto.precio_gbp }}</td>
+                <td>{{ producto.empresa }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

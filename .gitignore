@@ -31,4 +31,5 @@ MANIFEST
 
 # Environments
 .env2
+.env
 .environments
