@@ -1,5 +1,12 @@
 # django-CRUD
-Una aplicación sencilla construida con Django
+Una aplicación sencilla construida con Django cuanta con tres modulos 'inventarioPDF','registry','project' en los cuales todos manejan sus rutas por separdos. 
+
+En el modulo 'project' se encuentras definidos los modelos para interatuar con la DB-postgres, cuenta con 5 modelos 'Categoria','Producto','Cliente','Orden','OrdenProducto' los cuales todo cuentan con su CRUD realizado atravez de django rest framework
+
+En el modulo 'registry' se encuentran definidas las rutas de login,sinin,signp los cuales se autentican por medio de token para definir a que vistas del home puede acceder y a cuales no sin autprizacion 
+
+En el modulo 'inventarioPDF' se realiza todo el envio y registro del email adjuntando todo lo que tenga en el inventario que seria el modelo de Producto en donde se traen todos los tados de esta tabla y se envia al correo selecionado 
+
 
 ### Setup
 Actualizar el sistema
